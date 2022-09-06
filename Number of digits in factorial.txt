@@ -1,0 +1,12 @@
+class Solution{
+    public int digitsInFactorial(int N){
+        // code here
+        double c=0;
+        if(N==0 || N==1)return 1;
+       for(int i=2;i<=N;i++)
+       {
+           c+=Math.log10(i);
+       }
+       return (int)(Math.floor(c))+1;
+    }
+}
