@@ -1,0 +1,39 @@
+class Solution{
+    static int minJumps(int[] arr){
+        // your code here
+       int jumps = 1;
+    	if (arr[0] == 0 & arr.length > 1) {
+    		return -1;
+    	} 
+    if (arr.length == 1) {
+    	    return 0;
+    	}
+
+    	if (arr[0] >= arr.length-1) {
+    	    return 1;
+    	}
+
+    	int pointer = 1, maxReach = arr[0], currEnd = arr[0];
+    	boolean jumpable  = true;
+    	
+    	while (pointer < arr.length-1) {
+    		maxReach = pointer + arr[pointer] > maxReach ? pointer + arr[pointer] : maxReach;
+    		if (maxReach >= arr.length -1) {
+    			jumps++;
+    			break;
+    		}
+    		if (pointer == currEnd){
+    			if (currEnd == maxReach) {
+    				return -1;
+    			}
+    			jumps++;
+    			
+    			currEnd = maxReach;
+    			jumpable = false;
+    		}
+    		pointer++;
+    	}
+    	
+    	return jumps;
+    }
+}
