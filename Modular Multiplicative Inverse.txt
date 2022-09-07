@@ -1,0 +1,16 @@
+class Solution
+{
+    
+  public int modInverse(int a, int m)
+    {
+      //Your code here
+      int c=-1;
+      for(int i=1;i<m;i++)
+      {
+          if((a*i)%m==1)c=i;
+      }
+      return c;
+      
+    }
+
+}
