@@ -1,0 +1,18 @@
+class Solution
+{
+        
+    long power(int N,int R)
+    {
+        //Your code here
+        if(R==0)return 1;
+        long temp=power(N, R/2)%1000000007;
+        long ans=(temp*temp)%1000000007;
+        if(R%2==1)
+        {
+            ans=(ans*N)%1000000007;
+        }
+        return ans;
+        
+    }
+
+}
