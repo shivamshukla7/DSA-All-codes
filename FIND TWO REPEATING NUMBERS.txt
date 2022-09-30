@@ -1,0 +1,20 @@
+class Solution
+{
+    //Function to find two repeated elements.
+    public int[] twoRepeated(int arr[], int N)
+    {
+        // Your code here
+        HashSet<Integer> h=new HashSet<Integer>();
+        int[] a=new int[2];
+        int j=0,i=0;
+        while(i<N+2)
+        {
+            if(h.contains(arr[i]))a[j++]=arr[i];
+            else h.add(arr[i]);
+            i++;
+        }
+        h.clear();
+        return a;
+    }
+    
+}
