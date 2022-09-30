@@ -1,0 +1,20 @@
+class Solution
+{
+    //Function to find repeated element and its frequency.
+    public static Point findRepeating(Integer arr[],int n)
+    {
+        //Your code here
+        int x=0,y=1;
+        HashSet<Integer> h=new HashSet<Integer>();
+        for(int i=0;i<n;i++)
+        {
+            if(h.contains(arr[i])){
+                x=arr[i];
+                y++;
+            }
+            else h.add(arr[i]);
+        }
+        if(y>1)return new Point(x,y);
+        return new Point(-1,-1);
+    }  
+};
