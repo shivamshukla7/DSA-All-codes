@@ -1,0 +1,28 @@
+class Solution
+{
+    //Function to return a list containing the union of the two arrays.
+    public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        // add your code here
+        ArrayList<Integer> a=new ArrayList<Integer>();
+        HashSet<Integer>h=new HashSet<Integer>();
+        for(int i=0;i<n;i++){
+            if(!h.contains(arr1[i])){
+                h.add(arr1[i]);
+                a.add(arr1[i]);
+            }
+        }
+        for(int i=0;i<m;i++){
+            if(!h.contains(arr2[i])){
+                h.add(arr2[i]);
+                a.add(arr2[i]);
+            }
+        }
+        if(a.isEmpty())a.add(-1);
+        Collections.sort(a);
+        return a;
+        
+    }
+    
+    
+}
