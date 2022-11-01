@@ -1,0 +1,37 @@
+	boolean isIdentical(Node root1, Node root2)
+	{
+	    // Code Here
+	    ArrayList<Integer>a1=new ArrayList<Integer>();
+	    ArrayList<Integer>a2=new ArrayList<Integer>();
+	    a1=inorder(root1);
+	    a2=inorder(root2);
+	    if(!a1.equals(a2))return false;
+	    a1.clear();
+	    a2.clear();
+	    a1=preorder(root1);
+	    a2=preorder(root2);
+	    if(!a1.equals(a2))return false;
+	     return true;
+	    
+	}
+	public ArrayList<Integer>inorder(Node root)
+	{
+	    ArrayList<Integer> res=new ArrayList<Integer>();
+	    if(root==null)return res;
+	    res.addAll(inorder(root.left));
+	    res.add(root.data);
+	    res.addAll(inorder(root.right));
+	    return res;
+	}
+	 public static ArrayList<Integer> preorder(Node root)
+    {
+      ArrayList<Integer> al = new ArrayList<>();
+        if(root == null)
+        return al;
+        al.add(root.data);
+        al.addAll(preorder(root.left));
+        al.addAll(preorder(root.right));
+        return al;
+    }
+	
+}
